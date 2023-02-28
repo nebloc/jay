@@ -2,16 +2,53 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaybot9000</title>
+    <style type="text/css">
+      * {
+          font-size: 1rem;
+          font-family: Verdana;
+      }
+      body {
+          margin: 10px;
+      }
+      #form {
+          display: block;
+          margin: auto;
+      }
+      @media only screen and (max-width: 620px) {
+      /* For mobile phones: */
+          #np-input {
+              display: block;
+              margin: auto;
+              width: 80%;
+          }
+          #btn {
+              display: block;
+              margin: auto;
+              width: 80%;
+          }
+          #score{
+              display: block;
+              margin: auto;
+              width: 80%;
+          }
+          #liked{
+              display: block;
+              margin: auto;
+              width: 80%;
+          }
+      }
+    </style>
   </head>
   <body>
-    <form id="form">
-      <label>
-        Number plate:
-      </label>
-      <input type="text" id="np-input"/>
-      <button type="submit" id="btn">Submit</button>
-    </form>
+    <div>
+      <form id="form">
+        <input type="text" id="np-input"/>
+        <br/>
+        <button type="submit" id="btn">Calculate</button>
+      </form>
+    </div>
     <br/>
     <div id="score"></div>
     <div id="liked"></div>
@@ -31,7 +68,7 @@
               
               r.textContent = numberplate + " scored " + score
               if (liked(score)) {
-                  l.textContent = "Good number plate!"
+                  l.textContent = "Jay is happy!"
               } else {
                   l.textContent = ""
               }
